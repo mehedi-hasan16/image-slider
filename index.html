@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image slider</title>
+    <style>
+        header h1{
+            text-align: center;
+        }
+        .img-container{
+            height: 400px;
+            width: 700px;
+            margin: 0 auto;
+        }
+        .img-container img{
+            height: 100%;
+            width: 100%;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Image Preview</h1>
+    </header>
+    <main>
+        <section class="img-container">
+            <img id="load-img" src="" alt="">
+        </section>
+    </main>
+    
+    <script>
+        const imageName = [
+            'images/1.jpg',
+            'images/2.jpg',
+            'images/3.jpg',
+            'images/4.jpg',
+            'images/5.jpg',
+            'images/6.jpg',
+            'images/7.jpg',
+            'images/8.jpg',
+            'images/9.jpg',
+        ]
+const loadImg = document.getElementById('load-img');
+        let count = 0;
+        setInterval(()=>{
+            if(count ===imageName.length){
+                count = 0;
+            }
+            const name = imageName[count]
+            loadImg.setAttribute('src',name)
+            count ++;
+        },1000)
+    </script>
+</body>
+</html>
